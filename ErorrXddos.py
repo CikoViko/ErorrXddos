@@ -284,7 +284,7 @@ def main():
                 os.system(f'git clone {git}')
             except IndexError:
                 print('\nUsage: git clone <link>')
-                print('Example: git clone https://github.com/ghostxmods/ghostxmods\n\n')
+                print('Example: git clone https://github.com/CikoViko/ErorrXddos\n\n')
 
 ############# LAYER 4 #################
 
