@@ -27,30 +27,6 @@ def ascii_vro():
 
 ###################################
 
-def tools():
-    clear()
-    si()
-    home()
-    print("")
-    print(f'''
- \033[1;32;40m ████████╗ ██████╗  \033[1;34;40m██████╗ ██╗           
- \033[1;32;40m ╚══██╔══╝██╔═══██╗\033[1;34;40m██╔═══██╗██║
- \033[1;32;40m    ██║   ██║   ██║\033[1;34;40m██║   ██║██║
- \033[1;32;40m    ██║   ██║   ██║\033[1;34;40m██║   ██║██║  
- \033[1;32;40m    ██║   ╚██████╔╝\033[1;34;40m╚██████╔╝███████╗ 
- \033[1;32;40m    ╚═╝    ╚═════╝  \033[1;34;40m╚═════╝ ╚══════╝  \033[1;23;40m
-     ╔══════╗
-     ║tools ║          
-  ╔═════════╝
-  ║ geoip                     
-  ║ reverseip                        
-  ║ subnet-lookup         
-  ║ asn-lookup                    
-  ║ dns-lookup                
-  ║ reverse-dns
-  ║ reverse-dns          
-  ╚════════════╝
-''')
 
 
 ###################################
@@ -61,26 +37,7 @@ def si():
 
 ###################################
 
-def admin():
-    home()
-    print(' ')
-    print(f'''
-            ╔══════════════╩════════╦══════╩════════════════╗
-            ║         ADMIN         ║        CONTACT        ║
-            ╚═══════════════════════╩═══════════════════════╝
-            ╔═══════════════════════╦═══════════════════════╗
-            ║  ./Erorr37cyber.      ║ TELE: @ErorrXddos     ║
-            ║  ./Erorr37cyber.      ║ TELE: @ErorrXddos     ║
-            ║  ./Erorr37cyber.      ║ TELE: @ErorrXddos     ║
-            ║  ./Erorr37cyber.      ║ TELE: @ErorrXddos     ║
-            ║  ./Erorr37cyber.      ║ TELE: @ErorrXddos     ║
-            ║  ./Erorr37cyber.      ║ TELE: @ErorrXddos     ║
-            ║  ./Erorr37cyber.      ║ TELE: @ErorrXddos     ║
-            ║  ./Erorr37cyber.      ║ TELE: @ErorrXddos     ║
-            ╚═══════════════════════╩═══════════════════════╝
-  
-\033[1;34;40m📡 BERIKUT DAFTAR YANG IKUT DALAM PEMBANGUNAN TOOLS INI TERSEBUT, JIKA MAU MELAKUKAN PEMBELIAN LANGSUNG AJA KE CONTACT MEREKA 🛰️
-''')
+
 
 ###################################
 def layer7():
@@ -187,10 +144,6 @@ def main():
             main()
         elif cnc == "ports" or cnc == "port" or cnc == "PORTS" or cnc == "PORT":
             ports()
-        elif cnc == "tools" or cnc == "tool" or cnc == "TOOLS" or cnc == "TOOL":
-            tools()
-        elif cnc == "ADMIN" or cnc == "admin" or cnc == "adm" or cnc == "ADM":
-            admin()
         elif cnc == "install" or cnc == "INSTALL" or cnc == "instal" or cnc == "INSTALL":
             os.system(f'python3 install.py')
             main()
@@ -343,8 +296,6 @@ def main():
             print(f'''
 LAYER7  ► SHOW LAYER7 METHODS
 LAYER4  ► SHOW LAYER4 METHODS (SOON)
-TOOLS   ► SHOW TOOLS
-ADMIN   ► OWNER - ADMIN
 CLEAR   ► CLEAR TERMINAL
             ''')
 def login():
