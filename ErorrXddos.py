@@ -303,14 +303,14 @@ def login():
     passwd = "ytta"
     os.system("clear")
     print("")
-    username = input("⚡ Username: ")
-    password = getpass.getpass(prompt='⚡ Password: ')
+    username = input("📡 [Username] = ")
+    password = getpass.getpass(prompt='📡 [Password] = ')
     if username != user or password != passwd:
         print("")
-        print("⚡ PASSWORD SALAH")
+        print("❌ PASSWORD SALAH")
         sys.exit(1)
     elif username == user and password == passwd:
-        print("⚡ Welcome to ./ErorrXddos")
+        print("✅ Welcome to ./ErorrXddos")
         time.sleep(0.5)
         os.system("clear")
         os.system("git pull")
